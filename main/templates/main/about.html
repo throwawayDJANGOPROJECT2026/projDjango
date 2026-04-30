@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
+
+{% block content %}
+    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+        <div class="container p-4">
+        <h2 class="m-2"><strong>{{ content }}</strong></h2>
+        <p class="m-2">{{ text_on_page }}</p>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h4 class="mb-3">Что это за проект</h4>
+                <p>
+                    Это учебный Django-магазин мебели, в котором показаны каталог, корзина, оформление заказа,
+                    страницы доставки, оплаты и контактов. Проект подготовлен для демонстрации базовых навыков
+                    веб-разработки и работы с шаблонами, моделями, маршрутами и формами.
+                </p>
+                <p>
+                    В качестве примера использованы казахстанские данные: валюта в тенге, адрес в Усть-Каменогорске,
+                    а также локализованные контактные данные.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="mb-3">Ключевые особенности</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Каталог товаров с фильтрацией и поиском</li>
+                    <li class="list-group-item">Корзина и оформление заказа</li>
+                    <li class="list-group-item">Страницы для доставки, оплаты и контактов</li>
+                    <li class="list-group-item">Поддержка локальной валюты KZT (₸)</li>
+                    <li class="list-group-item">Готовность к запуску на другом компьютере через setup.py</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Ilya Bezgodov LLC 2026</p>
+    </div>
+</footer>
+{% endblock %}
+
+

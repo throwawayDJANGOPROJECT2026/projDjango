@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
+
+{% block content %}
+    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+        <div class="container p-4">
+            <h2 class="m-2"><strong>{{ content }}</strong></h2>
+            <p class="m-2">
+                Контактные данные оформлены под Казахстан для демонстрации. Основная точка выдачи и связи —
+                Усть-Каменогорск, ул. Серикбаева 17.
+            </p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4 class="mb-3">📍 Наш адрес</h4>
+                    <p>
+                        <strong>HOME KZ</strong><br>
+                        Усть-Каменогорск, ул. Серикбаева, 17<br>
+                        Восточно-Казахстанская область<br>
+                        Республика Казахстан, 070000
+                    </p>
+
+                    <h4 class="mb-3 mt-4">☎️ Телефон</h4>
+                    <p>
+                        <strong>+7 (7232) 55-12-34</strong><br>
+                        Отдел продаж: +7 (705) 111-22-33<br>
+                        Доставка: +7 (777) 222-33-44<br>
+                        Поддержка: +7 (771) 333-44-55
+                    </p>
+
+                    <h4 class="mb-3 mt-4">✉️ Email</h4>
+                    <p>
+                        <strong>info@homekz.kz</strong><br>
+                        sales@homekz.kz<br>
+                        support@homekz.kz
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h4 class="mb-3">⏰ Режим работы</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>Понедельник - Пятница:</strong> 09:00 - 19:00</li>
+                        <li><strong>Суббота:</strong> 10:00 - 18:00</li>
+                        <li><strong>Воскресенье:</strong> 10:00 - 16:00</li>
+                    </ul>
+
+                    <h4 class="mb-3 mt-4">🌐 Социальные сети</h4>
+                    <p>
+                        <a href="#" class="me-2">Instagram</a><br>
+                        <a href="#" class="me-2">YouTube</a><br>
+                        <a href="#" class="me-2">VK</a><br>
+                        <a href="#">Telegram</a>
+                    </p>
+
+                    <h4 class="mb-3 mt-4">📋 Реквизиты компании</h4>
+                    <p>
+                        <strong>ИП Илья и Стас</strong><br>
+                        БИН: 260441000001<br>
+                        ИИК: KZ91 1234 5678 9012 3456<br>
+                        БИК: HSBKKZKX<br>
+                        Банк: Halyk Bank
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4 class="mb-3">💬 Форма обратной связи</h4>
+                <form method="post" class="needs-validation">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ваше имя</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" id="phone" name="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Тема сообщения</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Сообщение</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Ilya Bezgodov LLC 2026</p>
+    </div>
+</footer>
+{% endblock %}
